@@ -43,14 +43,10 @@ class SiteController extends Controller
     public function actions()
     {
         return [
-            'glide' => 'trntv\glide\actions\GlideAction',
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
+            'set-locale'=>[
+                'class'=>'common\actions\SetLocaleAction',
+                'locales'=>array_keys(Yii::$app->params['availableLocales'])
+            ]
         ];
     }
 

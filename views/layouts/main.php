@@ -39,6 +39,16 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
+            [
+                'label'=>Yii::t('frontend', 'Language'),
+                'items'=>array_map(function ($code) {
+                    return [
+                        'label' => Yii::$app->params['availableLocales'][$code],
+                        'url' => ['/site/set-locale', 'locale'=>$code],
+                        'active' => Yii::$app->language === $code
+                    ];
+                }, array_keys(Yii::$app->params['availableLocales']))
+            ],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (

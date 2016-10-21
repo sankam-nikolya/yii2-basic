@@ -195,16 +195,6 @@ use trntv\filekit\widget\Upload;
         </div>
     </div>
 
-<?php echo "<?php ";?>if($flash = Yii::$app->session->getFlash('success')) :?>
-    <div class="form-group">
-        <?php echo "<?php ";?>echo Alert::widget(['options' => ['class' => 'alert-success'], 'body' => $flash]); ?>
-    </div>
-<?php echo "<?php ";?>elseif($flash = Yii::$app->session->getFlash('error')) :?>
-    <div class="form-group">
-        <?php echo "<?php ";?>echo Alert::widget(['options' => ['class' => 'alert-danger'], 'body' => $flash]); ?>
-    </div>
-<?php echo "<?php ";?> endif; ?>
-
 <?php foreach ($generator->getColumnNames() as $attribute) {
     if($attribute == $image_base) {
         echo "    <?php echo \$form->field(\$model, '$image_name')->widget(\n";

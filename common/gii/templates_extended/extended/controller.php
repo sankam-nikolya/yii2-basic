@@ -185,15 +185,6 @@ class <?php echo $controllerClass ?> extends <?php echo StringHelper::basename($
             $this->redirect($redirect);
         }
 
-<?php if($author_id):?>
-        $selection = $this->cheeckAccess($selection);
-
-        if(empty($selection)) {
-            Yii::$app->getSession()->setFlash('error', <?php echo $generator->generateString('Rows that chose you can\'t edit.') ?>);
-            $this->redirect($redirect);
-        }
-
-<?php endif;?>
         switch ($action) {
             case 'delete':
                 <?php echo $modelClass ?>::deleteAll(['id' => $selection]);
@@ -252,21 +243,6 @@ class <?php echo $controllerClass ?> extends <?php echo StringHelper::basename($
         }
     }
 
-<?php if($author_id):?>
-    private function cheeckAccess($items) {
-        if (!Yii::$app->user->isGuest) {
-            if(Yii::$app->user->can('administrator')) {
-                return $items;
-            } else {
-                $items = <?php echo $modelClass ?>::find()->where(['id' => $items])->andWhere(['author_id' => Yii::$app->user->id])->all();
-                return \yii\helpers\ArrayHelper::map($items, 'id', 'id');
-            }
-        } else {
-            throw new ForbiddenHttpException(<?php echo $generator->generateString('Access denied') ?>);
-        }
-    }
-
-<?php endif;?>
     /**
      * Lists all <?php echo $modelClass ?> models.
      * @return mixed

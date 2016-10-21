@@ -39,6 +39,11 @@ class Menu extends \yii\widgets\Menu
     public $parentRightIcon = '<span class="pull-right"><i class="glyphicon glyphicon-triangle-bottom"></i></span>';
 
     /**
+     * @var string
+     */
+    public $submenuTemplate = '<ul class="dropdown-menu">{items}</ul>';
+
+    /**
      * @inheritdoc
      */
     protected function renderItem($item)

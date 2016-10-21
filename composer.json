@@ -27,7 +27,8 @@
         "trntv/yii2-command-bus": "^2.0",
         "symfony/process": "^3.0",
         "kartik-v/yii2-widget-datepicker": "@dev",
-        "xj/yii2-bootbox-widget": "^1.0"
+        "xj/yii2-bootbox-widget": "^1.0",
+        "kotchuprik/yii2-sortable-widgets": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

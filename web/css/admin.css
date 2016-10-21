@@ -246,7 +246,7 @@ a.desc:after {
 }
 
 .rating,
-.subway {
+.icon-row {
   width: 100%;
   text-align: center;
 }
@@ -257,6 +257,15 @@ a.desc:after {
 .rating > a:focus {
   color: #f39c12;
   text-decoration: none;
+}
+
+
+.icon-row .glyphicon-remove.non-delete {
+  color: #ddd;
+}
+
+.icon-row .glyphicon-ok.non-save {
+  color: #49a54a;
 }
 
 
@@ -314,6 +323,10 @@ a.desc:after {
 .navbar-fixed-side {
   background-color: #222d32;
   border-color: #222d32;
+}
+
+.navbar-fixed-side .dropdown-menu {
+  padding-bottom: 0;
 }
 
 .navbar-fixed-side .dropdown > .dropdown-menu,
@@ -430,5 +443,11 @@ a.desc:after {
   }
   .navbar-fixed-side {
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .filters .form-control {
+    width: 100%;
   }
 }

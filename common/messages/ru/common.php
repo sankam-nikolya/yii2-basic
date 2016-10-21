@@ -78,6 +78,7 @@ return [
     'Password' => 'Пароль',
     'Roles' => 'Роли',
     'Email' => 'E-mail',
-
+    'Item can\'t be descendant of its descendants' => 'Пункт не может быть потомком своих потомков',
+    'Maximum nesting level for this menu is reached' => 'Максимальный уровень вложенности для этого меню достигнут'
 
 ];

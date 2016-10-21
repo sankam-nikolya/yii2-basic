@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use common\widgets\SiteMenu;
 
 AppAsset::register($this);
 ?>
@@ -33,6 +34,13 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
+    echo SiteMenu::widget([
+            'menu'=>'verhnee-menu',
+            'options' => [
+                'class' => 'navbar-nav navbar-right nav'
+            ],
+            'submenuTemplate' => '<ul class="dropdown-menu">{items}</ul>'
+        ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [

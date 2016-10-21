@@ -70,6 +70,17 @@ BootboxAsset::registerWithOverride($this);
                         'options'=>['class'=>'header'],
                     ],
                     [
+                        'label'=>Yii::t('backend', 'Menu'),
+                        'url'=>['menu/index'],
+                        'options'=>['class'=>'dropdown'],
+                        'linkOptions'=>['class'=>'dropdown-toggle', 'data-toggle'=>'dropdown', 'aria-expanded'=>'false', 'role' => 'button'],
+                        'visible'=>Yii::$app->user->can('administrator'),
+                        'items'=>[
+                            ['label'=>Yii::t('backend', 'Menu'), 'url'=>['menu/index'], 'active'=> Yii::$app->controller->id == 'menu'],
+                            ['label'=>Yii::t('backend', 'Menu Items'), 'url'=>['menu-items/index'], 'active'=> Yii::$app->controller->id == 'menu-items'],
+                        ]
+                    ],
+                    [
                         'label'=>Yii::t('backend', 'Users'),
                         'url'=>['/users/index'],
                         'visible'=>Yii::$app->user->can('administrator'),

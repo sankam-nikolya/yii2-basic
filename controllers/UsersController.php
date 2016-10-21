@@ -15,7 +15,6 @@ use Intervention\Image\ImageManagerStatic;
 use trntv\filekit\actions\DeleteAction;
 use trntv\filekit\actions\UploadAction;
 use yii\imagine\Image;
-use yii\web\Controller;
 
 /**
  * UserController implements the CRUD actions for User model.

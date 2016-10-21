@@ -36,7 +36,7 @@ foreach ($labels as $name => $label) {
             $html  = "            [\n";
             $html .= "                'class' => SluggableBehavior::className(),\n";
             $html .= "                'attribute' => 'title',\n";
-            $html .= "                'immutable' => true\n";
+            $html .= "                'immutable' => true,\n";
             $html .= "                'ensureUnique' => true\n";
             $html .= "            ]";
             $html .= "";

@@ -20,13 +20,12 @@ class BackendController extends Controller
         ];
     }
 
-
     public function beforeAction($action)
     {
-        $this->layout = 'admin';
         if (Yii::$app->user->isGuest || !Yii::$app->user->can('loginToBackend')) {
             return $this->redirect(['/admin/login']);
         }
+        $this->layout = 'admin';
         return parent::beforeAction($action);
     }
 

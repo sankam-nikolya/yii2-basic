@@ -1,9 +1,9 @@
 <?php
 
-namespace frontend\modules\api\v1\controllers;
+namespace common\modules\api\v1\controllers;
 
 use common\models\User;
-use frontend\modules\api\v1\resources\User as UserResource;
+use common\modules\api\v1\resources\User as UserResource;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\HttpBearerAuth;
@@ -19,7 +19,7 @@ class UserController extends ActiveController
     /**
      * @var string
      */
-    public $modelClass = 'frontend\modules\api\v1\resources\User';
+    public $modelClass = 'common\modules\api\v1\resources\User';
 
     /**
      * @return array

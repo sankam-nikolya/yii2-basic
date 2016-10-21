@@ -1,8 +1,8 @@
 <?php
-namespace frontend\modules\api\v1\controllers;
+namespace common\modules\api\v1\controllers;
 
 use Yii;
-use frontend\modules\api\v1\resources\Article;
+use common\modules\api\v1\resources\Article;
 use yii\data\ActiveDataProvider;
 use yii\rest\ActiveController;
 use yii\web\ForbiddenHttpException;
@@ -17,7 +17,7 @@ class ArticleController extends ActiveController
     /**
      * @var string
      */
-    public $modelClass = 'frontend\modules\api\v1\resources\Article';
+    public $modelClass = 'common\modules\api\v1\resources\Article';
     /**
      * @var array
      */

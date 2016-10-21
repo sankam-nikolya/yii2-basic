@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\modules\api;
+namespace common\modules\api;
 
 use Yii;
 

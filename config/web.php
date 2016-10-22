@@ -148,6 +148,21 @@ $config = [
         'formatter'=>[
             'class'=>'yii\i18n\Formatter'
         ],
+        /*'view' => [
+            'class' => 'common\modules\minify\View',
+            'enableMinify' => !YII_DEBUG,
+            'web_path' => '@web',
+            'base_path' => '@webroot',
+            'minify_path' => '@webroot/minify',
+            'js_position' => [ \yii\web\View::POS_END ],
+            'pack_js' => true,
+            //'force_charset' => 'UTF-8',
+            'expand_imports' => true,
+            'compress_output' => true,
+            'compress_options' => [
+                'extra' => true,
+            ]
+        ]*/
     ],
     'as locale' => [
         'class' => 'common\behaviors\LocaleBehavior',

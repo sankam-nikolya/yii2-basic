@@ -9,8 +9,8 @@ $config = [
         'log',
         'maintenance'
     ],
-    'sourceLanguage'=>'en-US',
-    'language'=>'ru-RU',
+    'sourceLanguage'=>'en-GB',
+    'language'=>$params['defaultLanguage'],
     'modules' => [
         'user' => [
             'class' => 'common\modules\user\Module',

@@ -350,6 +350,7 @@ a.desc:after {
 }
 
 .navbar-fixed-side .navbar-nav > li > a,
+.navbar-fixed-side .navbar-nav > li > a:hover,
 .navbar-fixed-side .navbar-nav > li > a:active,
 .navbar-fixed-side .navbar-nav > li > a:focus {
   outline: 0;

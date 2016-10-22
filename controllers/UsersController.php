@@ -166,7 +166,7 @@ class UsersController extends \common\controllers\BackendController
         if ($model->load($_POST) && $model->save()) {
             Yii::$app->session->setFlash('alert', [
                 'options'=>['class'=>'alert-success'],
-                'body'=>Yii::t('backend', 'Your profile has been successfully saved', [], $model->locale)
+                'body'=>Yii::t('backend', 'Your profile has been successfully saved')
             ]);
             return $this->refresh();
         }

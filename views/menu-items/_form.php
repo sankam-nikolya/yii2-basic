@@ -33,7 +33,7 @@ $this->registerJs($formatJs, View::POS_READY);
         <div class="btn-group" role="group">
             <?php echo Html::submitButton($model->isNewRecord ? Yii::t('backend', 'Create') : Yii::t('backend', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-info']) ?>
             <?php echo Html::submitButton($model->isNewRecord ? Yii::t('backend', 'Create & Close') : Yii::t('backend', 'Update & Close'), ['onclick' => 'document.getElementById("redirect").value="1"', 'class' => 'btn btn-default']) ?>
-            <?php  echo Html::a(Yii::t('backend', 'Cancel'), 'index', ['class' => 'btn btn-default']);?>
+            <?php  echo Html::a(Yii::t('backend', 'Cancel'), ['index'], ['class' => 'btn btn-default']);?>
         </div>
     </div>
 

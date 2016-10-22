@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-xs-6">
             <h4><?php echo Yii::t('backend', 'Delete a value with the specified key from cache') ?></h4>
             <?php \yii\bootstrap\ActiveForm::begin([
-                'action'=>\yii\helpers\Url::to('flush-cache-key'),
+                'action'=> ['flush-cache-key'],
                 'method'=>'get',
                 'layout'=>'inline',
             ]) ?>
@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-xs-6">
             <h4><?php echo Yii::t('backend', 'Invalidate tag') ?></h4>
             <?php \yii\bootstrap\ActiveForm::begin([
-                'action'=>\yii\helpers\Url::to('flush-cache-tag'),
+                'action'=> ['flush-cache-tag'],
                 'method'=>'get',
                 'layout'=>'inline'
             ]) ?>

@@ -220,7 +220,7 @@ class MenuItems extends \yii\db\ActiveRecord
     {
         if(!empty($this->id)) {
             if(!$this->canBeParent($this->$attribute, $this->id)) {
-                $this->addError($attribute, Yii::t('common', 'Item can\'t be descendant of its descendants'));
+                $this->addError($attribute, Yii::t('backend', 'Item can\'t be descendant of its descendants'));
             }
         }
     }
@@ -232,7 +232,7 @@ class MenuItems extends \yii\db\ActiveRecord
         $menu = Menu::findOne($this->menu_id);
 
         if($menu && $this->level > $menu->max_levels) {
-            $this->addError($attribute, Yii::t('common', 'Maximum nesting level for this menu is reached'));
+            $this->addError($attribute, Yii::t('backend', 'Maximum nesting level for this menu is reached'));
         }
     }
 

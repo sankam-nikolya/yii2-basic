@@ -28,14 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </div>
 
-<?php
-    if($flash = Yii::$app->session->getFlash('success')){
-        echo Alert::widget(['options' => ['class' => 'alert-success'], 'body' => $flash]);
-    } elseif($flash = Yii::$app->session->getFlash('error')) {
-        echo Alert::widget(['options' => ['class' => 'alert-danger'], 'body' => $flash]);
-    }
-?>
-
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,

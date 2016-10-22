@@ -13,7 +13,7 @@ $this->title = Yii::t('backend', 'Login');
     <div class="col-sm-6 col-md-4 col-md-offset-4">
         <div class="account-wall">
             <?php $form = ActiveForm::begin(['id' => 'login-form', 'options' => ['class' => 'form-signin']]); ?>
-                <h1 class="login-title"><?php echo Yii::t('backend', 'Login');?></h1>
+                <h1 class="login-title"><?php echo Yii::t('backend', 'Authentication');?></h1>
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'form-control']) ?>
                 <?= $form->field($model, 'password')->passwordInput(['class' => 'form-control']) ?>
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>

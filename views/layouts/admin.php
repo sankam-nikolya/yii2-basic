@@ -175,7 +175,7 @@ BootboxAsset::registerWithOverride($this);
                     <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                         'homeLink' => [
                             'label' => Yii::t('backend', 'Admin Panel'),
-                            'url' => '/dashboard/index'
+                            'url' => ['dashboard/index']
                         ]
                     ]) ?>
                 </div>

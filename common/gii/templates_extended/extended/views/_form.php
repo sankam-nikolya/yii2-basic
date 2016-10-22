@@ -191,7 +191,7 @@ use trntv\filekit\widget\Upload;
         <div class="btn-group" role="group">
             <?= "<?php echo " ?>Html::submitButton($model->isNewRecord ? <?= $generator->generateString('Create') ?> : <?= $generator->generateString('Update') ?>, ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-info']) ?>
             <?= "<?php echo " ?>Html::submitButton($model->isNewRecord ? <?= $generator->generateString('Create & Close') ?> : <?= $generator->generateString('Update & Close') ?>, ['onclick' => 'document.getElementById("redirect").value="1"', 'class' => 'btn btn-default']) ?>
-            <?= "<?php " ?> echo Html::a(<?= $generator->generateString('Cancel') ?>, 'index', ['class' => 'btn btn-default']);?>
+            <?= "<?php " ?> echo Html::a(<?= $generator->generateString('Cancel') ?>, ['index'], ['class' => 'btn btn-default']);?>
         </div>
     </div>
 

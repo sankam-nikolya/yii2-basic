@@ -29,6 +29,8 @@ $image_base = false;
 $image_path = false;
 $image_name = '';
 
+$order = false;
+
 foreach ($labels as $name => $label) {
     switch ($name) {
         case 'slug':
@@ -70,6 +72,10 @@ foreach ($labels as $name => $label) {
 
         case 'published_at':
             $published_at = true;
+            break;
+
+        case 'order':
+            $order = true;
             break;
     }
 
@@ -126,6 +132,14 @@ if($image_base && $image_path && $image_name) {
     $behaviators_code[]  = $html;
 }
 
+if($order) {
+    $html  = "            'sortable' => [\n";
+    $html  .= "                'class' => \kotchuprik\sortable\behaviors\Sortable::className(),\n";
+    $html  .= "                'query' => self::find(),\n";
+    $html  .= "            ]";
+    $behaviators_code[]  = $html;
+}
+
 if (!empty($relations))
 {
     /*foreach ($relations as $name => $relation)
@@ -153,6 +167,7 @@ use lhs\Yii2SaveRelationsBehavior\SaveRelationsBehavior;
 <?php if($image_base && $image_path):?>
 use trntv\filekit\behaviors\UploadBehavior;
 <?php endif;?>
+use common\models\User;
 use v0lume\yii2\metaTags\MetaTagBehavior;
 
 /**
@@ -287,6 +302,22 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . 
         ];
     }
 
+<?php if($order):?>
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+     
+            if($insert) {
+                $max = (int) self::find()->max('[[order]]');
+                $this->order = $max + 1;
+            }
+     
+            return true;
+        }
+        return false;
+    }
+
+<?php endif;?>
     /*
     public function afterSave($insert, $changedAttributes)
     {

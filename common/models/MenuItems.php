@@ -122,35 +122,15 @@ class MenuItems extends \yii\db\ActiveRecord
      
             $this->level = $this->getItemLevel((int) $this->parent_id);
 
+            if($insert) {
+                $max = (int) self::find()->max('[[order]]');
+                $this->order = $max + 1;
+            }
+            
             return true;
         }
         return false;
     }
-
-    /*
-    public function afterSave($insert, $changedAttributes)
-    {
-        parent::afterSave($insert, $changedAttributes);
-
-        // some action
-
-        return true;
-    }
-
-    public function beforeDelete()
-    {
-        if (parent::beforeDelete()) {
-            $action = 'delete';
-
-            // some action
-
-            return true;
-        } else {
-            return false;
-        }
-    }
-    */
-
 
     /**
      * @return \yii\db\ActiveQuery

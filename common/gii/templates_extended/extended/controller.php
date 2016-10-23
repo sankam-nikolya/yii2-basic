@@ -33,6 +33,8 @@ $image_base = false;
 $image_path = false;
 $image_name = '';
 
+$order = false;
+
 if (($tableSchema = $generator->getTableSchema()) === false) {
     foreach ($generator->getColumnNames() as $name) {
         switch ($name) {
@@ -46,6 +48,10 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
 
             case 'published_at':
                 $published_at = true;
+                break;
+
+            case 'order':
+                $order = true;
                 break;
         }
 
@@ -72,6 +78,10 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
 
             case 'published_at':
                 $published_at = true;
+                break;
+
+            case 'order':
+                $order = true;
                 break;
         }
 
@@ -130,6 +140,9 @@ class <?php echo $controllerClass ?> extends <?php echo StringHelper::basename($
                     'delete' => ['post'],
                     'bulkactions' => ['post'],
                     '<?php echo yii\helpers\Inflector::camel2id($modelClass.'List') ?>' => ['post'],
+<?php if ($order):?>
+                    'sorting' => ['post']
+<?php endif;?>
                 ],
             ],
         ];
@@ -159,7 +172,25 @@ class <?php echo $controllerClass ?> extends <?php echo StringHelper::basename($
             ],
             '<?php echo $image_name;?>-delete' => [
                 'class' => \trntv\filekit\actions\DeleteAction::className()
-            ]
+            ],
+<?php if($order):?>
+            'sorting' => [
+                'class' => \kotchuprik\sortable\actions\Sorting::className(),
+                'query' => <?php echo $modelClass ?>::find(),
+            ],
+<?php endif;?>
+        ];
+    }
+<?php elseif ($order):?>
+    /**
+     * @inheritdoc
+     */
+    public function actions(){
+        return [
+            'sorting' => [
+                'class' => \kotchuprik\sortable\actions\Sorting::className(),
+                'query' => <?php echo $modelClass ?>::find(),
+            ],
         ];
     }
 <?php endif;?>
@@ -259,11 +290,19 @@ class <?php echo $controllerClass ?> extends <?php echo StringHelper::basename($
         <?php echo ($author_id) ? '// ' : '';?>$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 <?php if($published_at):?>
         /* $dataProvider->sort = [
+<?php if (!$order):?>
             'defaultOrder' => ['published_at' => SORT_DESC]
+<?php else:?>
+            'defaultOrder' => ['order' => SORT_ASC]
+<?php endif;?>
         ]; */
 <?php else:?>
         /* $dataProvider->sort = [
+<?php if (!$order):?>
+            'defaultOrder' => ['published_at' => SORT_DESC]
+<?php else:?>
             'defaultOrder' => ['id'=>SORT_DESC]
+<?php endif;?>
         ]; */
 <?php endif;?>
 <?php if($author_id):?>
@@ -275,11 +314,19 @@ class <?php echo $controllerClass ?> extends <?php echo StringHelper::basename($
 <?php endif;?>
 <?php if($published_at):?>
         $dataProvider->sort = [
+<?php if (!$order):?>
             'defaultOrder' => ['published_at' => SORT_DESC]
+<?php else:?>
+            'defaultOrder' => ['order' => SORT_ASC]
+<?php endif;?>
         ];
 <?php else:?>
         $dataProvider->sort = [
+<?php if (!$order):?>
             'defaultOrder' => ['id' => SORT_DESC]
+<?php else:?>
+            'defaultOrder' => ['order' => SORT_ASC]
+<?php endif;?>
         ];
 <?php endif;?>
 

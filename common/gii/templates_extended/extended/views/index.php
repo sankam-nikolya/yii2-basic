@@ -9,6 +9,27 @@ use yii\helpers\StringHelper;
 $urlParams = $generator->generateUrlParams();
 $nameAttribute = $generator->getNameAttribute();
 
+$order = false;
+
+if (($tableSchema = $generator->getTableSchema()) === false) {
+    foreach ($generator->getColumnNames() as $name) {
+        switch ($name) {
+            case 'order':
+                $order = true;
+                break;
+        }
+    }
+} else {
+    foreach ($tableSchema->columns as $column) {
+        $format = $generator->generateColumnFormat($column);
+        switch ($column->name) {
+            case 'order':
+                $order = true;
+                break;
+        }
+    }
+}
+
 echo "<?php\n";
 ?>
 
@@ -43,10 +64,17 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php if ($generator->indexWidgetType === 'grid'): ?>
     <?php echo "<?php echo " ?>GridView::widget([
         'dataProvider' => $dataProvider,
-        <?php echo !empty($generator->searchModelClass) ? "'filterModel' => \$searchModel,\n        'columns' => [\n" : "'columns' => [\n"; ?>
+        <?php 
+            if($order){
+                echo !empty($generator->searchModelClass) ? "'filterModel' => \$searchModel,\n        'rowOptions' => function (\$model, \$key, \$index, \$grid) {\n            return ['data-sortable-id' => \$model->id];\n        },\n        'columns' => [\n" : "'columns' => [\n";
+            } else {
+                echo !empty($generator->searchModelClass) ? "'filterModel' => \$searchModel,\n        'columns' => [\n" : "'columns' => [\n";
+            } ?>
             ['class' => 'yii\grid\CheckboxColumn'],
             //['class' => 'yii\grid\SerialColumn'],
-
+<?php if($order):?>
+            ['class' => \kotchuprik\sortable\grid\Column::className()],
+<?php endif;?>
 <?php
 $count = 0;
 if (($tableSchema = $generator->getTableSchema()) === false) {
@@ -552,6 +580,14 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                 'template'=>'{update} {delete}'
             ]
         ],
+<?php if($order):?>
+        'options' => [
+            'data' => [
+                'sortable-widget' => 1,
+                'sortable-url' => \yii\helpers\Url::toRoute(['sorting']),
+            ]
+        ],
+<?php endif;?>
     ]); ?>
 <?php else: ?>
     <?php echo "<?php echo " ?>ListView::widget([

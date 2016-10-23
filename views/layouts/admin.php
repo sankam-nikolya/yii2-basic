@@ -82,7 +82,7 @@ BootboxAsset::registerWithOverride($this);
                     ],
                     [
                         'label'=>Yii::t('backend', 'Users'),
-                        'url'=>['/users/index'],
+                        'url'=>['users/index'],
                         'visible'=>Yii::$app->user->can('administrator'),
                         'active'=> Yii::$app->controller->id == 'users'
                     ],

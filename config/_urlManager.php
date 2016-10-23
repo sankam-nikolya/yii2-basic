@@ -9,7 +9,7 @@ return [
         //'action' => UrlNormalizer::ACTION_REDIRECT_TEMPORARY, // use temporary redirection instead of permanent
     ],
     'rules'=> [
-        //['pattern'=>'admin/login', 'route'=>'/user/sign-in/login'],
+    	//['pattern'=>'admin/login', 'route'=>'/user/sign-in/login'],
 
         // Api
         ['class' => 'yii\rest\UrlRule', 'controller' => 'api/v1/article', 'only' => ['index', 'view', 'options']],
@@ -18,8 +18,6 @@ return [
 
 
         /* ----------- ADMIN PANEL ----------- */
-
-        ['pattern'=>'thumb/<path:(.*)>', 'route'=>'thumb/glide', 'encodeParams' => false],
 
         ['pattern'=>'login',  'route'=>'admin/login'],
         ['pattern'=>'logout', 'route'=>'admin/logout'],
@@ -56,5 +54,11 @@ return [
         ['pattern'=>'admin/log', 'route'=>'log/index'],
         ['pattern'=>'admin/log/<id:\d+>/<action:(view|delete)>', 'route'=>'log/<action>'],
 
+
+
+        /* ----------- SYSTEM ----------- */
+
+        ['pattern'=>'thumb/<path:(.*)>', 'route'=>'thumb/glide', 'encodeParams' => false],
+        ['pattern'=>'captcha', 'route'=>'thumb/captcha', 'encodeParams' => false],
     ]
 ];

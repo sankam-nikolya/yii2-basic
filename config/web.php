@@ -153,7 +153,7 @@ $config = [
             'enableMinify' => !YII_DEBUG,
             'web_path' => '@web',
             'base_path' => '@webroot',
-            'minify_path' => '@webroot/minify',
+            'minify_path' => '@webroot/min',
             'js_position' => [ \yii\web\View::POS_END ],
             'pack_js' => true,
             //'force_charset' => 'UTF-8',
@@ -233,9 +233,9 @@ if (YII_ENV_DEV) {
                 'class'=>'yii\gii\generators\crud\Generator',
                 'templates'=>[
                     'default' => Yii::getAlias('@common/gii/templates'),
-                    'default-extended' => Yii::getAlias('@common/gii/templates_extended/extended')
+                    'extended' => Yii::getAlias('@common/gii/templates_extended/extended')
                 ],
-                'template' => 'yii2-starter-kit-extended',
+                'template' => 'extended',
                 'messageCategory' => 'backend'
             ],
             'model' => [

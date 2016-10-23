@@ -9,7 +9,7 @@ $config = [
         'log',
         'maintenance'
     ],
-    'sourceLanguage'=>'en-GB',
+    'sourceLanguage'=>'en',
     'language'=>$params['defaultLanguage'],
     'modules' => [
         'user' => [

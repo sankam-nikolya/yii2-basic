@@ -7,5 +7,5 @@ return [
         'en-GB'=>'English',
         'ru-RU'=>'Русский',
     ],
-    'defaultLanguage' => 'ru-RU'
+    'defaultLanguage' => 'ru'
 ];

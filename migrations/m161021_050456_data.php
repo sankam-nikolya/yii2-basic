@@ -129,15 +129,15 @@ class m161021_050456_data extends yii\db\Migration
             'key' => 'app.company',
             'value' => 'SANKAM',
             'comment' => 'NULL',
-            'updated_at' => '1476874415',
-            'created_at' => '1476874415',
+            'updated_at' => 'NULL',
+            'created_at' => 'NULL',
         ]);
 
         $this->insert('{{%key_storage_item}}', [
             'key' => 'app.name',
             'value' => 'Site Name',
             'comment' => 'NULL',
-            'updated_at' => '1476874449',
+            'updated_at' => 'NULL',
             'created_at' => 'NULL',
         ]);
 
@@ -166,12 +166,22 @@ class m161021_050456_data extends yii\db\Migration
         ]);
 
         $this->insert('{{%key_storage_item}}', [
+            'key' => 'backend.max.filesize',
+            'value' => '5000000',
+            'comment' => 'NULL',
+            'updated_at' => 'NULL',
+            'created_at' => 'NULL',
+        ]);
+
+        $this->insert('{{%key_storage_item}}', [
             'key' => 'frontend.widget.cachetime',
             'value' => '86400',
             'comment' => 'NULL',
             'updated_at' => 'NULL',
             'created_at' => 'NULL',
         ]);
+
+
 
 
         # {{%menu}}

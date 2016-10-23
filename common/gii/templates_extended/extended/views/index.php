@@ -68,6 +68,31 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "            ],\n";
                     break;
 
+
+                case 'image_path':
+                    echo "            [\n";
+                    echo "                'attribute' => '". $name."',\n";
+                    echo "                'label' => ".$generator->generateString('Image').",\n";
+                    echo "                'format' => 'raw',\n";
+                    echo "                'value' => function(\$model) {\n";
+                    echo "                    return Html::a(\n";
+                    echo "                        Html::img(\n";
+                    echo "                            Yii::\$app->glide->createSignedUrl([\n";
+                    echo "                                'thumb/glide',\n";
+                    echo "                                'path' => 'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
+                    echo "                                'w' => (int) Yii::\$app->keyStorage->get('backend.list.thumb')\n";
+                    echo "                            ], true),\n";
+                    echo "                            ['class' => 'img-responsive']),\n";
+                    echo "                        ['update', 'id'=>\$model->id]\n";
+                    echo "                    );\n";
+                    echo "                }\n";
+                    echo "            ],\n";
+                    break;
+                    
+                case 'image_base_url':
+                    break;
+
+
                 case 'description':
                 case 'description_short':
                 case 'short_description':
@@ -176,6 +201,29 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "            ], */\n";
                     break;
 
+                case 'image_path':
+                    echo "            /* [\n";
+                    echo "                'attribute' => '". $name."',\n";
+                    echo "                'label' => ".$generator->generateString('Image').",\n";
+                    echo "                'format' => 'raw',\n";
+                    echo "                'value' => function(\$model) {\n";
+                    echo "                    return Html::a(\n";
+                    echo "                        Html::img(\n";
+                    echo "                            Yii::\$app->glide->createSignedUrl([\n";
+                    echo "                                'thumb/glide',\n";
+                    echo "                                'path' => 'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
+                    echo "                                'w' => (int) Yii::\$app->keyStorage->get('backend.list.thumb')\n";
+                    echo "                            ], true),\n";
+                    echo "                            ['class' => 'img-responsive']),\n";
+                    echo "                        ['update', 'id'=>\$model->id]\n";
+                    echo "                    );\n";
+                    echo "                }\n";
+                    echo "            ], */\n";
+                    break;
+
+                case 'image_base_url':
+                    break;
+
                 case 'status':
                     echo "            /* [\n";
                     echo "                'class'=>\common\grid\EnumColumn::className(),\n";
@@ -281,6 +329,29 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "            ],\n";
                     break;
 
+                case 'image_path':
+                    echo "            [\n";
+                    echo "                'attribute' => '". $column->name."',\n";
+                    echo "                'label' => ".$generator->generateString('Image').",\n";
+                    echo "                'format' => 'raw',\n";
+                    echo "                'value' => function(\$model) {\n";
+                    echo "                    return Html::a(\n";
+                    echo "                        Html::img(\n";
+                    echo "                            Yii::\$app->glide->createSignedUrl([\n";
+                    echo "                                'thumb/glide',\n";
+                    echo "                                'path' => 'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
+                    echo "                                'w' => (int) Yii::\$app->keyStorage->get('backend.list.thumb')\n";
+                    echo "                            ], true),\n";
+                    echo "                            ['class' => 'img-responsive']),\n";
+                    echo "                        ['update', 'id'=>\$model->id]\n";
+                    echo "                    );\n";
+                    echo "                }\n";
+                    echo "            ],\n";
+                    break;
+                    
+                case 'image_base_url':
+                    break;
+
                 case 'status':
                     echo "            [\n";
                     echo "                'class'=>\common\grid\EnumColumn::className(),\n";
@@ -375,6 +446,29 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "                    return \yii\helpers\StringHelper::truncate( strip_tags(\$model->".$column->name."), 100, '...');\n";
                     echo "                }\n";
                     echo "            ],\n";
+                    break;
+
+                case 'image_path':
+                    echo "            /* [\n";
+                    echo "                'attribute' => '". $column->name."',\n";
+                    echo "                'label' => ".$generator->generateString('Image').",\n";
+                    echo "                'format' => 'raw',\n";
+                    echo "                'value' => function(\$model) {\n";
+                    echo "                    return Html::a(\n";
+                    echo "                        Html::img(\n";
+                    echo "                            Yii::\$app->glide->createSignedUrl([\n";
+                    echo "                                'thumb/glide',\n";
+                    echo "                                'path' => 'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
+                    echo "                                'w' => (int) Yii::\$app->keyStorage->get('backend.list.thumb')\n";
+                    echo "                            ], true),\n";
+                    echo "                            ['class' => 'img-responsive']),\n";
+                    echo "                        ['update', 'id'=>\$model->id]\n";
+                    echo "                    );\n";
+                    echo "                }\n";
+                    echo "            ], */\n";
+                    break;
+                    
+                case 'image_base_url':
                     break;
 
                 case 'status':

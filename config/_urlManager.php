@@ -12,8 +12,8 @@ return [
     	//['pattern'=>'admin/login', 'route'=>'/user/sign-in/login'],
 
         // Api
-        ['class' => 'yii\rest\UrlRule', 'controller' => 'api/v1/article', 'only' => ['index', 'view', 'options']],
-        ['class' => 'yii\rest\UrlRule', 'controller' => 'api/v1/user', 'only' => ['index', 'view', 'options']],
+        // ['class' => 'yii\rest\UrlRule', 'controller' => 'api/v1/article', 'only' => ['index', 'view', 'options']],
+        // ['class' => 'yii\rest\UrlRule', 'controller' => 'api/v1/user', 'only' => ['index', 'view', 'options']],
 
 
 
@@ -28,6 +28,7 @@ return [
         ['pattern'=>'admin/profile', 'route'=>'users/profile'],
         ['pattern'=>'admin/users',   'route'=>'users/index'],
         ['pattern'=>'admin/users/<id:\d+>/<action:(create|update|delete)>', 'route'=>'users/<action>'],
+        ['pattern'=>'admin/users/<action:(avatar-upload|avatar-delete)>', 'route'=>'users/<action>'],
 
         ['pattern'=>'admin/menu', 'route'=>'menu/index'],
         ['pattern'=>'admin/menu/bulkactions', 'route'=>'menu/bulkactions'],
@@ -46,6 +47,7 @@ return [
         ['pattern'=>'admin/settings/<id>/<action:(create|update|delete)>', 'route'=>'key-storage/<action>'],
 
         ['pattern'=>'admin/storage', 'route'=>'file-storage/index'],
+        ['pattern'=>'admin/storage/<action:(upload|upload-imperavi)>', 'route'=>'file-storage/<action>'],
         ['pattern'=>'admin/storage/<id:\d+>/<action:(optimize|view|delete)>', 'route'=>'file-storage/<action>'],
 
         ['pattern'=>'admin/cache', 'route'=>'cache/index'],
@@ -53,8 +55,6 @@ return [
  
         ['pattern'=>'admin/log', 'route'=>'log/index'],
         ['pattern'=>'admin/log/<id:\d+>/<action:(view|delete)>', 'route'=>'log/<action>'],
-
-
 
         /* ----------- SYSTEM ----------- */
 

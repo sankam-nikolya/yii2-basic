@@ -1,6 +1,8 @@
 # phpstorm project files
 .idea
 
+.lock
+
 # netbeans project files
 nbproject
 
@@ -14,6 +16,7 @@ Thumbs.db
 
 # composer vendor dir
 /vendor
+
 /web/uploads
 /web/assets
 

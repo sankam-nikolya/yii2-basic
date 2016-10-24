@@ -136,6 +136,11 @@ class VideoUrlParser
         return "https://youtube.com/embed/$youtube_video_id".$params;
     }
 
+    public static function get_youtube_wath_link($youtube_id)
+    {
+        return "https://www.youtube.com/watch?v=$youtube_id";
+    }
+
     /**
      * Builds a Youtube embed url from a video id.
      *

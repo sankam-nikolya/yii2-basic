@@ -54,10 +54,13 @@ class FileStorageController extends \common\controllers\BackendController
                 'on afterSave' => function ($event) {
                     /* @var $file \League\Flysystem\File */
                     $file = $event->file;
-                    $optimizeImageCommand = new \common\commands\OptimizeImageCommand([
-                        'image' => $file
-                    ]);
-                    Yii::$app->commandBus->handle($optimizeImageCommand);
+                    if(in_array($file->type, FileStorageController::image_types)) {
+                        $optimizeImageCommand = new \common\commands\OptimizeImageCommand([
+                            'image' => $file
+                        ]);
+                        Yii::$app->commandBus->handle($optimizeImageCommand);
+                    }
+                    return true;
                 }
             ],
             'upload-delete' => [
@@ -72,10 +75,13 @@ class FileStorageController extends \common\controllers\BackendController
                 'on afterSave' => function ($event) {
                     /* @var $file \League\Flysystem\File */
                     $file = $event->file;
-                    $optimizeImageCommand = new \common\commands\OptimizeImageCommand([
-                        'image' => $file
-                    ]);
-                    Yii::$app->commandBus->handle($optimizeImageCommand);
+                    if(in_array($file->type, FileStorageController::image_types)) {
+                        $optimizeImageCommand = new \common\commands\OptimizeImageCommand([
+                            'image' => $file
+                        ]);
+                        Yii::$app->commandBus->handle($optimizeImageCommand);
+                    }
+                    return true;
                 }
             ]
         ];

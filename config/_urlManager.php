@@ -45,7 +45,7 @@ return [
         ['pattern'=>'admin/settings/<id>/<action:(update|delete)>', 'route'=>'key-storage/<action>'],
 
         ['pattern'=>'admin/storage', 'route'=>'file-storage/index'],
-        ['pattern'=>'admin/storage/<action:(upload|upload-imperavi)>', 'route'=>'file-storage/<action>'],
+        ['pattern'=>'admin/storage/<action:(upload|upload-imperavi|upload-delete)>', 'route'=>'file-storage/<action>'],
         ['pattern'=>'admin/storage/<id:\d+>/<action:(optimize|view|delete)>', 'route'=>'file-storage/<action>'],
 
         ['pattern'=>'admin/cache', 'route'=>'cache/index'],

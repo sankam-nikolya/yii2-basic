@@ -41,6 +41,7 @@ class FileStorageLogBehavior extends Behavior
         if (Yii::$app->request->getIsConsoleRequest() === false) {
             $model->upload_ip = Yii::$app->request->getUserIP();
         }
+        $model->optimized = 0;
         $model->save(false);
     }
 

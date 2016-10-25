@@ -239,10 +239,10 @@ if (YII_ENV_DEV) {
                 'messageCategory' => 'backend'
             ],
             'model' => [
-                'class' => 'yii\gii\generators\model\Generator',
+                'class' => '\common\gii\model\Generator',
                 'templates'=>[
-                    'default' => Yii::getAlias('@common/gii/model'),
-                    'default-witch-metatags' => Yii::getAlias('@common/gii/model_metatags')
+                    'default' => Yii::getAlias('@common/gii/model/model'),
+                    'default-witch-metatags' => Yii::getAlias('@common/gii/model/model_metatags')
                 ],
                 'template' => 'default',
                 'messageCategory' => 'backend'

@@ -99,7 +99,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
 
                 case 'image_path':
                     echo "            [\n";
-                    echo "                'attribute' => '". $name."',\n";
+                    echo "                'attribute' => 'image',\n";
                     echo "                'label' => ".$generator->generateString('Image').",\n";
                     echo "                'format' => 'raw',\n";
                     echo "                'value' => function(\$model) {\n";
@@ -107,7 +107,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "                        Html::img(\n";
                     echo "                            Yii::\$app->glide->createSignedUrl([\n";
                     echo "                                'thumb/glide',\n";
-                    echo "                                'path' => 'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
+                    echo "                                'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
                     echo "                                'w' => (int) Yii::\$app->keyStorage->get('backend.list.thumb')\n";
                     echo "                            ], true),\n";
                     echo "                            ['class' => 'img-responsive']),\n";
@@ -231,7 +231,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
 
                 case 'image_path':
                     echo "            /* [\n";
-                    echo "                'attribute' => '". $name."',\n";
+                    echo "                'attribute' => 'image',\n";
                     echo "                'label' => ".$generator->generateString('Image').",\n";
                     echo "                'format' => 'raw',\n";
                     echo "                'value' => function(\$model) {\n";
@@ -239,7 +239,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "                        Html::img(\n";
                     echo "                            Yii::\$app->glide->createSignedUrl([\n";
                     echo "                                'thumb/glide',\n";
-                    echo "                                'path' => 'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
+                    echo "                                'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
                     echo "                                'w' => (int) Yii::\$app->keyStorage->get('backend.list.thumb')\n";
                     echo "                            ], true),\n";
                     echo "                            ['class' => 'img-responsive']),\n";
@@ -359,7 +359,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
 
                 case 'image_path':
                     echo "            [\n";
-                    echo "                'attribute' => '". $column->name."',\n";
+                    echo "                'attribute' => 'image',\n";
                     echo "                'label' => ".$generator->generateString('Image').",\n";
                     echo "                'format' => 'raw',\n";
                     echo "                'value' => function(\$model) {\n";
@@ -367,7 +367,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "                        Html::img(\n";
                     echo "                            Yii::\$app->glide->createSignedUrl([\n";
                     echo "                                'thumb/glide',\n";
-                    echo "                                'path' => 'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
+                    echo "                                'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
                     echo "                                'w' => (int) Yii::\$app->keyStorage->get('backend.list.thumb')\n";
                     echo "                            ], true),\n";
                     echo "                            ['class' => 'img-responsive']),\n";
@@ -478,7 +478,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
 
                 case 'image_path':
                     echo "            /* [\n";
-                    echo "                'attribute' => '". $column->name."',\n";
+                    echo "                'attribute' => 'image',\n";
                     echo "                'label' => ".$generator->generateString('Image').",\n";
                     echo "                'format' => 'raw',\n";
                     echo "                'value' => function(\$model) {\n";
@@ -486,7 +486,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "                        Html::img(\n";
                     echo "                            Yii::\$app->glide->createSignedUrl([\n";
                     echo "                                'thumb/glide',\n";
-                    echo "                                'path' => 'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
+                    echo "                                'path' => (!empty(\$model->image_path)) ? Yii::getAlias(\$model->image_base_url . '/' . \$model->image_path) : \$this->assetManager->getAssetUrl(\$bundle, 'img/no-image.png'),\n";
                     echo "                                'w' => (int) Yii::\$app->keyStorage->get('backend.list.thumb')\n";
                     echo "                            ], true),\n";
                     echo "                            ['class' => 'img-responsive']),\n";

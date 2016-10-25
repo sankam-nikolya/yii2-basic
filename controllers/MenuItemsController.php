@@ -197,7 +197,7 @@ class MenuItemsController extends BackendController
     {
         $model = new MenuItems();
         $redirect = (boolean) Yii::$app->request->post('redirect');
-        $menu_id = (int) Yii::$app->request->get('menu_id', 0);
+        $menu_id = (int) Yii::$app->request->get('id', 0);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->getSession()->setFlash('success', Yii::t('backend', 'Item «<strong>{title}</strong>» created.', ['title' => $model->title]));

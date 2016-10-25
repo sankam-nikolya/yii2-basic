@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $menu->title;
 <?php echo Html::beginForm([$this->context->id.'/bulkactions'],'post', ['class' => 'form-inline']);?>
 <div class="row bulkactions">
     <div class="col-md-4">
-        <?php echo Html::a(Yii::t('backend', 'Create Menu Item'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?php echo Html::a(Yii::t('backend', 'Create Menu Item'), ['create', 'id' => $menu->id], ['class' => 'btn btn-success']) ?>
     </div>
     <div class="col-md-8">
         <div class="input-group pull-right" role="group" aria-label="Actions">

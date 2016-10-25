@@ -32,7 +32,8 @@ return [
         ['pattern'=>'admin/menu/<id:\d+>/<action:(create|update|delete|bulkactions)>', 'route'=>'menu/<action>'],
         
         ['pattern'=>'admin/menu/list', 'route'=>'menu-items/index'],
-        ['pattern'=>'admin/menu/list/<action:(create|bulkactions|sorting)>', 'route'=>'menu-items/<action>'],
+        ['pattern'=>'admin/menu/list/<action:(bulkactions|sorting)>', 'route'=>'menu-items/<action>'],
+        ['pattern'=>'admin/menu/list/<id:\d+>/create', 'route'=>'menu-items/create'],
         ['pattern'=>'admin/menu/<id:\d+>/items', 'route'=>'menu-items/items'],
         ['pattern'=>'admin/menu/list/<id:\d+>/<action:(update|delete)>', 'route'=>'menu-items/<action>'],
 

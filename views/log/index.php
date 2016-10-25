@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'log_time',
                 'value' => function($model) {
-                    return date('d.m.Y, H:m:i', $model->log_time);
+                    return date('d.m.Y, H:i:s', $model->log_time);
                 },
                 'filter' => \kartik\date\DatePicker::widget([
                     'model' => $searchModel,

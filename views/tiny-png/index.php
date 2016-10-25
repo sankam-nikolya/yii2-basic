@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'created_at',
                 'value' => function($model) {
-                    return date('d.m.Y, H:m:i', $model->created_at);
+                    return date('d.m.Y, H:i:s', $model->created_at);
                 },
                 'filter' => \kartik\date\DatePicker::widget([
                     'model' => $searchModel,

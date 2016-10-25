@@ -165,7 +165,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "            [\n";
                     echo "                'attribute' => '" . $name . "',\n";
                     echo "                'value' => function(\$model) {\n";
-                    echo "                    return date('d.m.Y, H:m:i', \$model->" . $name . ");\n";
+                    echo "                    return date('d.m.Y, H:i:s', \$model->" . $name . ");\n";
                     echo "                },\n";
                     echo "                'filter' => \kartik\date\DatePicker::widget([\n";
                     echo "                    'model' => \$searchModel,\n";
@@ -284,7 +284,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "            /* [\n";
                     echo "                'attribute' => '" . $name . "',\n";
                     echo "                'value' => function(\$model) {\n";
-                    echo "                    return date('d.m.Y, H:m:i', $model->" . $name . ");\n";
+                    echo "                    return date('d.m.Y, H:i:s', $model->" . $name . ");\n";
                     echo "                },\n";
                     echo "                'filter' => \kartik\date\DatePicker::widget([\n";
                     echo "                    'model' => \$searchModel,\n";
@@ -412,7 +412,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "            [\n";
                     echo "                'attribute' => '" . $column->name . "',\n";
                     echo "                'value' => function(\$model) {\n";
-                    echo "                    return date('d.m.Y, H:m:i', \$model->" . $column->name . ");\n";
+                    echo "                    return date('d.m.Y, H:i:s', \$model->" . $column->name . ");\n";
                     echo "                },\n";
                     echo "                'filter' => \kartik\date\DatePicker::widget([\n";
                     echo "                    'model' => \$searchModel,\n";
@@ -531,7 +531,7 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
                     echo "            /* [\n";
                     echo "                'attribute' => '" . $column->name . "',\n";
                     echo "                'value' => function(\$model) {\n";
-                    echo "                    return date('d.m.Y, H:m:i', \$model->" . $column->name . ");\n";
+                    echo "                    return date('d.m.Y, H:i:s', \$model->" . $column->name . ");\n";
                     echo "                },\n";
                     echo "                'filter' => \kartik\date\DatePicker::widget([\n";
                     echo "                    'model' => \$searchModel,\n";

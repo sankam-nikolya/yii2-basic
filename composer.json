@@ -28,7 +28,8 @@
         "symfony/process": "^3.0",
         "kartik-v/yii2-widget-datepicker": "@dev",
         "xj/yii2-bootbox-widget": "^1.0",
-        "kotchuprik/yii2-sortable-widgets": "*"
+        "kotchuprik/yii2-sortable-widgets": "*",
+        "kartik-v/yii2-widget-select2": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

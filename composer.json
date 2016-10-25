@@ -29,6 +29,7 @@
         "kartik-v/yii2-widget-datepicker": "@dev",
         "xj/yii2-bootbox-widget": "^1.0",
         "kotchuprik/yii2-sortable-widgets": "*",
+        "la-haute-societe/yii2-save-relations-behavior": "*",
         "kartik-v/yii2-widget-select2": "@dev"
     },
     "require-dev": {

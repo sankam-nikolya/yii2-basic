@@ -30,7 +30,7 @@ class FileStorageController extends \common\controllers\BackendController
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => ['administrator'],
+                        'roles' => ['manager'],
                     ],
                 ],
             ],

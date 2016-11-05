@@ -83,33 +83,6 @@ class MenuController extends BackendController
         $this->redirect($redirect);
     }
 
-    /*public function actionMenuList($q = null, $id = null) {
-        $request = Yii::$app->request;
-        $q  = $request->post('q');
-        $id = $request->post('id');
-        if (Yii::$app->request->isAjax) {
-            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-            $out = ['results' => ['id' => '', 'text' => '']];
-            if (!is_null($q)) {
-                $query = new yii\db\Query;
-                $query->select('[[id]], [[title]] AS [[text]]')
-                    ->from(Menu::tableName())
-                    ->where(['like', 'title', $q])
-                    ->andWhere(['status' => 1])
-                    ->limit(20);
-                $command = $query->createCommand();
-                $data = $command->queryAll();
-                $out['results'] = array_values($data);
-            } elseif ($id > 0) {
-                $item = Menu::find($id)->one();
-                $out['results'] = ['id' => $id, 'text' => $item->title];
-            }
-            return $out;
-        } else {
-            throw new NotFoundHttpException(Yii::t('backend', 'The requested page does not exist.'));
-        }
-    }*/
-
     /**
      * Lists all Menu models.
      * @return mixed
@@ -130,18 +103,6 @@ class MenuController extends BackendController
             'dataProvider' => $dataProvider,
         ]);
     }
-
-    /**
-     * Displays a single Menu model.
-     * @param integer $id
-     * @return mixed
-     */
-    /*public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }*/
 
     /**
      * Creates a new Menu model.

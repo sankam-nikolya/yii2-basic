@@ -39,12 +39,13 @@ return [
 
         ['pattern'=>'admin/tiny-png', 'route'=>'tiny-png/index'],
         ['pattern'=>'admin/tiny-png/<action:(create|bulkactions)>', 'route'=>'tiny-png/<action>'],
-        ['pattern'=>'admin/tiny-png/<id:\d+>/<action:(create|update|delete)>', 'route'=>'tiny-png/<action>'],
+        ['pattern'=>'admin/tiny-png/<id:\d+>/<action:(update|delete)>', 'route'=>'tiny-png/<action>'],
 
         ['pattern'=>'admin/settings', 'route'=>'key-storage/index'],
         ['pattern'=>'admin/settings/<action:(create|bulkactions)>', 'route'=>'key-storage/<action>'],
         ['pattern'=>'admin/settings/<id>/<action:(update|delete)>', 'route'=>'key-storage/<action>'],
 
+        // ['pattern'=>'admin/settings', 'route'=>'dashboard/settings'],
         ['pattern'=>'admin/storage', 'route'=>'file-storage/index'],
         ['pattern'=>'admin/storage/<action:(upload|upload-imperavi|upload-delete)>', 'route'=>'file-storage/<action>'],
         ['pattern'=>'admin/storage/<id:\d+>/<action:(optimize|view|delete)>', 'route'=>'file-storage/<action>'],

@@ -1,8 +1,12 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
-    'robotEmail' => 'robot@example.com',
+    'adminEmail' => function ($app) {
+        return $app->keyStorage->get('app.admin.mail');
+    },
+    'robotEmail' => function ($app) {
+        return $app->keyStorage->get('app.robot.email');
+    },
     'availableLocales'=>[
         'en'=>'English',
         'ru'=>'Русский',

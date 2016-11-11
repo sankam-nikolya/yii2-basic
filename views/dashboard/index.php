@@ -1,5 +1,7 @@
 <?php
 /* @var $this yii\web\View */
+
+$this->title = Yii::t('backend', 'Admin Panel');
 ?>
 <h1>dashboard/index</h1>
 

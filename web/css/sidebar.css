@@ -44,8 +44,8 @@
         float: none
     }
     .navbar-fixed-side .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 7px;
+        padding-bottom: 7px;
         border-bottom: 1px solid #e7e7e7
     }
     .navbar-fixed-side .navbar-form {

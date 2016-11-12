@@ -14,8 +14,8 @@ $this->title = Yii::t('backend', 'Login');
         <div class="account-wall">
             <?php $form = ActiveForm::begin(['id' => 'login-form', 'options' => ['class' => 'form-signin']]); ?>
                 <h1 class="login-title"><?php echo Yii::t('backend', 'Authentication');?></h1>
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'form-control']) ?>
-                <?= $form->field($model, 'password')->passwordInput(['class' => 'form-control']) ?>
+                <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'form-control', 'autocomplete' => 'off']) ?>
+                <?= $form->field($model, 'password')->passwordInput(['class' => 'form-control', 'autocomplete' => 'off']) ?>
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
                 <?= Html::submitButton(Yii::t('backend', 'Sign in'), ['class' => 'btn btn-primary form-control', 'name' => 'login-button']) ?>
             <?php ActiveForm::end(); ?>

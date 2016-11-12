@@ -45,7 +45,7 @@ class SendEmailCommand extends Object implements SelfHandlingCommand
      */
     public function init()
     {
-        $this->from = $this->from ?: \Yii::$app->params['robotEmail'];
+        $this->from = $this->from ?: \Yii::$app->keyStorage->get('app.robot.email');
     }
 
     /**
@@ -73,7 +73,7 @@ class SendEmailCommand extends Object implements SelfHandlingCommand
             }
         }
         $message->setFrom($command->from);
-        $message->setTo($command->to ?: \Yii::$app->params['robotEmail']);
+        $message->setTo($command->to ?: \Yii::$app->keyStorage->get('app.robot.email'));
         $message->setSubject($command->subject);
         return $message->send();
     }

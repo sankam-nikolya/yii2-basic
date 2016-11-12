@@ -146,7 +146,16 @@ $config = [
             'signKey' => 'JhgdGFRjssRDGHsmHawgwoxjGF'
         ],
         'formatter'=>[
-            'class'=>'yii\i18n\Formatter'
+            'class'=>'yii\i18n\Formatter',
+            'locale' => $params['defaultLanguage']
+        ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            //'useFileTransport' => true,
+            'messageConfig' => [
+                'charset' => 'UTF-8',
+                'from' => $params['robotEmail'],
+            ]
         ],
         /*'view' => [
             'class' => 'common\modules\minify\View',

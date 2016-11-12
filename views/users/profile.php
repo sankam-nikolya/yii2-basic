@@ -32,7 +32,7 @@ $this->title = Yii::t('backend', 'Edit profile')
         UserProfile::GENDER_MALE => Yii::t('backend', 'Male')
     ]) ?>
 
-    <!-- <?php echo $form->field($model, 'locale')->dropDownlist(Yii::$app->params['availableLocales']) ?> -->
+    <?php echo $form->field($model, 'locale')->dropDownlist(Yii::$app->params['availableLocales']) ?>
 
     <div class="form-group">
         <?php echo Html::submitButton(Yii::t('backend', 'Update'), ['class' => 'btn btn-primary']) ?>

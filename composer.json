@@ -31,7 +31,8 @@
         "xj/yii2-bootbox-widget": "^1.0",
         "kotchuprik/yii2-sortable-widgets": "*",
         "la-haute-societe/yii2-save-relations-behavior": "*",
-        "kartik-v/yii2-widget-select2": "@dev"
+        "kartik-v/yii2-widget-select2": "@dev",
+        "bower-asset/html5shiv": "^3.0"
     },
     "require-dev": {
         "codeception/codeception": "*",

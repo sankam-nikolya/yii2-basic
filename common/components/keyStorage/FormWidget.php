@@ -43,7 +43,12 @@ class FormWidget extends Widget
         foreach ($model->keys as $key => $config) {
             $type = ArrayHelper::getValue($config, 'type', FormModel::TYPE_TEXTINPUT);
             $options = ArrayHelper::getValue($config, 'options', []);
-            $field = $form->field($model, $key);
+            $labelOptions = [];
+            if(isset($options['labelOptions'])) {
+                $labelOptions['labelOptions'] = $options['labelOptions'];
+                unset($options['labelOptions']);
+            }
+            $field = $form->field($model, $key, $labelOptions);
             $items = ArrayHelper::getValue($config, 'items', []);
             switch ($type) {
                 case FormModel::TYPE_TEXTINPUT:

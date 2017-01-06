@@ -127,9 +127,15 @@ class VideoUrlParser
 
         if($hide_info) {
             $params[] = 'showinfo=0';
-        }        
+        }
 
-        return self::getScheme()."youtube.com/embed/$youtube_video_id".((!empty($params) ? '?'.implode('&', $params) : ''));
+        if(!empty($params)) {
+            $params = '?'.implode('&', $params);
+        } else {
+            $params = '';
+        } 
+
+        return self::getScheme()."youtube.com/embed/$youtube_video_id".$params;
     }
 
     public static function getScheme() {

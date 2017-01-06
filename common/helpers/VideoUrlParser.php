@@ -1,6 +1,8 @@
 <?php
 namespace common\helpers;
 
+use Yii;
+
 /**
  * Video Url Parser
  *
@@ -125,20 +127,24 @@ class VideoUrlParser
 
         if($hide_info) {
             $params[] = 'showinfo=0';
+        }        
+
+        return self::getScheme()."youtube.com/embed/$youtube_video_id".((!empty($params) ? '?'.implode('&', $params) : ''));
+    }
+
+    public static function getScheme() {
+        $schema = 'http://';
+
+        if(Yii::$app->request->isSecureConnection) {
+            $schema = 'https://';
         }
 
-        if(!empty($params)) {
-            $params = '?'.implode('&', $params);
-        } else {
-            $params = '';
-        }
-
-        return "https://youtube.com/embed/$youtube_video_id".$params;
+        return $schema;
     }
 
     public static function get_youtube_wath_link($youtube_id)
     {
-        return "https://www.youtube.com/watch?v=$youtube_id";
+        return self::getScheme()."www.youtube.com/watch?v=$youtube_id";
     }
 
     /**
@@ -149,7 +155,7 @@ class VideoUrlParser
      */
     public static function get_youtube_thumb($youtube_video_id, $size = 1)
     {
-        return "http://img.youtube.com/vi/".$youtube_video_id."/".$size.".jpg";
+        return self::getScheme()."img.youtube.com/vi/".$youtube_video_id."/".$size.".jpg";
     }
 
     /**
@@ -172,7 +178,7 @@ class VideoUrlParser
      */
     public static function get_vimeo_embed($vimeo_video_id, $autoplay = 1)
     {
-        $embed = "http://player.vimeo.com/video/$vimeo_video_id?byline=0&amp;portrait=0&amp;autoplay=$autoplay";
+        $embed = self::getScheme()."player.vimeo.com/video/$vimeo_video_id?byline=0&amp;portrait=0&amp;autoplay=$autoplay";
 
         return $embed;
     }
